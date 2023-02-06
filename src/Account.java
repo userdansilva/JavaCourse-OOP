@@ -1,11 +1,28 @@
 public class Account {
-    private long number;
+    private String number;
     private double balance;
     private String name;
     private String email;
-    private long phoneNumber;
+    private String phoneNumber;
 
-    public long getNumber() {
+    public Account() {
+        this("Default name", "Default email", "Default phone number");
+    }
+
+    public Account(String name, String email, String phoneNumber) {
+        this("12345-0", 0.00, name, email, phoneNumber);
+    }
+
+    public Account(String number, double balance, String name,
+                   String email, String phoneNumber) {
+        this.number = number;
+        this.balance = balance;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getNumber() {
         return number;
     }
 
@@ -17,11 +34,15 @@ public class Account {
         return name;
     }
 
-    public long getPhoneNumber() {
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setNumber(long number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -33,7 +54,11 @@ public class Account {
         this.name = name;
     }
 
-    public void setPhoneNumber(long phoneNumber) {
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
