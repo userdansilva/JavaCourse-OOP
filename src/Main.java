@@ -1,15 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        Account account = new Account();
+        Customer defaultCustomer = new Customer();
 
-        System.out.println("Initial balance is " + account.getBalance());
+        System.out.println("Hi " + defaultCustomer.getName() +
+                " (" + defaultCustomer. getEmail() +
+                "), your credit limit is " + defaultCustomer.getCreditLimit());
 
-        account.depositAndPrintBalance(200.00);
+        Customer daniel = new Customer("Daniel" , "daniel@com.br");
 
-        account.withdrawAndPrintBalance(300.00);
+        System.out.println("Hi " + daniel.getName() +
+                " (" + daniel. getEmail() +
+                "), your credit limit is " + daniel.getCreditLimit());
 
-        account.withdrawAndPrintBalance(50.00);
-        account.withdrawAndPrintBalance(200.00);
-        account.withdrawAndPrintBalance(150.00);
+        Customer pedro = new Customer("Pedro", 200.00, "pedro@com.br");
+
+        System.out.println("Hi " + pedro.getName() +
+                " (" + pedro. getEmail() +
+                "), your credit limit is " + pedro.getCreditLimit());
     }
 }
