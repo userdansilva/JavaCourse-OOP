@@ -1,11 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        Dog.barkStatic("Master");
+        Wall wall = new Wall(5, 4);
+        System.out.println(wall.getArea());
 
-        Dog docker = new Dog("Docker");
-        docker.bark();
-
-        Dog jenkins = new Dog("Jenkins");
-        jenkins.bark();
+        wall.setHeight(-1.5);
+        System.out.println("width=" + wall.getWidth());
+        System.out.println("height=" + wall.getHeight());
+        System.out.println("area=" + wall.getArea());
     }
 }
