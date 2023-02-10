@@ -2,9 +2,7 @@ public class Point {
     private int x;
     private int y;
 
-    public Point() {
-        this(0, 0);
-    }
+    public Point() {}
 
     public Point(int x, int y) {
         this.x = x;
@@ -28,15 +26,15 @@ public class Point {
     }
 
     public double distance() {
-        return this.distance(0,0);
+        return distance(0,0);
     }
 
     public double distance(int x, int y) {
-        return this.distance(new Point(x, y));
+        return distance(new Point(x, y));
     }
 
     public double distance(Point point) {
-        return Math.sqrt((point.getX() - this.x) * (point.getX() - this.x) +
-                (point.getY() - this.y) * (point.getY() - this.y));
+        return Math.sqrt(Math.pow(point.getX() - this.x, 2) +
+                Math.pow(point.getY() - this.y, 2));
     }
 }
