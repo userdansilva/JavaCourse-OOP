@@ -1,18 +1,12 @@
 public class Main {
     public static void main(String[] args) {
-        for(int i = 1; i <= 5; i++) {
-            Student student = new Student("234200" + i,
-                    switch (i) {
-                        case 1 -> "Daniel";
-                        case 2 -> "Pedro";
-                        case 3 -> "Julia";
-                        case 4 -> "Augusto";
-                        case 5 -> "Alfredo";
-                        default -> "undefined";
-                    },
-                    "Java Masterclass"
-                    );
-            System.out.println(student);
-        }
+        Carpet carpet = new Carpet(3.5);
+        Floor floor = new Floor(2.75, 4.0);
+        Calculator calculator = new Calculator(floor, carpet);
+        System.out.println("total= " + calculator.getTotalCost());
+        carpet = new Carpet(1.5);
+        floor = new Floor(5.4, 4.5);
+        calculator = new Calculator(floor, carpet);
+        System.out.println("total= " + calculator.getTotalCost());
     }
 }
