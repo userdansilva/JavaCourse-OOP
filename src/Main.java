@@ -1,23 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-        Animal animal = new Animal("Any Animal", "Big", 300.0);
-        doAnimalStuff(animal, "slow");
+        Employee daniel = new Employee("Daniel", "10/13/1997", "01/01/2018");
+        daniel.terminate("01/01/2020");
 
-        Dog dog = new Dog(50.00, "pointed", "curly");
-        doAnimalStuff(dog, "fast");
-    }
+        System.out.println(daniel.getAge());
+        System.out.println(daniel.collectPay());
+        System.out.println(daniel);
 
-    public static void doAnimalStuff(Animal animal, String speed) {
-        animal.makeNoise();
-        animal.move(speed);
-        System.out.println(animal);
-        System.out.println("_ _ _ _");
-    }
+        SalariedEmployee pedro = new SalariedEmployee("Pedro", "10/13/1997", "01/01/2018", 35_000);
 
-    public static void doAnimalStuff(Dog dog, String speed) {
-        dog.bark();
-        dog.move(speed);
-        System.out.println(dog);
-        System.out.println("_ _ _ _");
+        pedro.retire();
+        System.out.println(pedro);
+        System.out.println(pedro.collectPay());
+
+        HourlyEmployee august = new HourlyEmployee("August", "10/13/1997", "01/01/2018", 15);
+        System.out.println(august);
+        System.out.println(august.collectPay());
+        System.out.println(august.getDoublePay());
     }
 }
