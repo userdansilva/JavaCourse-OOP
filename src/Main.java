@@ -1,11 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        Point first = new Point(6, 5);
-        Point second = new Point(3, 1);
-        System.out.println("distance(0,0)= " + first.distance());
-        System.out.println("distance(second)= " + first.distance(second));
-        System.out.println("distance(2,2)= " + first.distance(2, 2));
-        Point point = new Point();
-        System.out.println("distance()= " + point.distance());
+        for(int i = 1; i <= 5; i++) {
+            Student student = new Student("234200" + i,
+                    switch (i) {
+                        case 1 -> "Daniel";
+                        case 2 -> "Pedro";
+                        case 3 -> "Julia";
+                        case 4 -> "Augusto";
+                        case 5 -> "Alfredo";
+                        default -> "undefined";
+                    },
+                    "Java Masterclass"
+                    );
+            System.out.println(student);
+        }
     }
 }
