@@ -1,16 +1,26 @@
-public class Dog {
-    private static String name;
+public class Dog extends Animal {
+    private String earShape;
+    private String tailShape;
 
-    public Dog(String name) {
-        Dog.name = name;
+    public Dog() {
+        super("Dog", "Medium", 20.0);
     }
 
-    public static void barkStatic(String name) {
-        Dog.name = name;
-        System.out.println("Woof " + Dog.name);
+    public Dog(double weight, String earShape, String tailShape) {
+        super("Dog", weight < 15 ? "small" : (weight < 35 ? "medium" : "large"), weight);
+        this.earShape = earShape;
+        this.tailShape = tailShape;
     }
 
     public void bark() {
-        System.out.println("The dog " + Dog.name + " had woof");
+        System.out.println(type + " makes woof");
+    }
+
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "earShape='" + earShape + '\'' +
+                ", tailShape='" + tailShape + '\'' +
+                "} " + super.toString();
     }
 }
