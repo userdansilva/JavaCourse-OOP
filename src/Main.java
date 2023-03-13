@@ -1,21 +1,18 @@
 public class Main {
     public static void main(String[] args) {
-        Employee daniel = new Employee("Daniel", "10/13/1997", "01/01/2018");
-        daniel.terminate("01/01/2020");
+        String textBlock = """
+                    List items
+                        • First Item
+                        • Second Item""";
 
-        System.out.println(daniel.getAge());
-        System.out.println(daniel.collectPay());
-        System.out.println(daniel);
+        System.out.println(textBlock);
 
-        SalariedEmployee pedro = new SalariedEmployee("Pedro", "10/13/1997", "01/01/2018", 35_000);
+        System.out.printf("My age is %d and my birth year is %d, and a I have %.2f", 25, 1997, (float) 10.0);
 
-        pedro.retire();
-        System.out.println(pedro);
-        System.out.println(pedro.collectPay());
+        String formattedString = String.format("I have R$ %.2f", 35.50);
+        System.out.println(formattedString);
 
-        HourlyEmployee august = new HourlyEmployee("August", "10/13/1997", "01/01/2018", 15);
-        System.out.println(august);
-        System.out.println(august.collectPay());
-        System.out.println(august.getDoublePay());
+        String otherFormatted = "I have R$ %.2f".formatted(35.50);
+        System.out.println(otherFormatted);
     }
 }
