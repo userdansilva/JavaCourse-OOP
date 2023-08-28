@@ -5,6 +5,10 @@ public class  Account {
     private String customerEmail;
     private String customerPhone;
 
+    public Account(String customerName, String customerEmail, String customerPhone) {
+        this("Default number", 100.0, customerName, customerEmail, customerPhone);
+    }
+
     public Account(String number, double balance, String customerName, String email, String phone) {
         this.number = number;
         this.balance = balance;
@@ -71,5 +75,16 @@ public class  Account {
 
     public void setCustomerPhone(String customerPhone) {
         this.customerPhone = customerPhone;
+    }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "number='" + number + '\'' +
+                ", balance=" + balance +
+                ", customerName='" + customerName + '\'' +
+                ", customerEmail='" + customerEmail + '\'' +
+                ", customerPhone='" + customerPhone + '\'' +
+                '}';
     }
 }
