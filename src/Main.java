@@ -1,22 +1,15 @@
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
-        for( int i = 1; i<= 5; i++) {
-            String name;
-
-            switch (i) {
-               case 1 -> name = "Daniel";
-               case 2 -> name = "Pedro";
-               case 3 -> name = "Augusto";
-               case 4 -> name = "Ana";
-               case 5 -> name = "Julia";
-               default -> name = "Unsupported";
-            }
-
-            Student student = new Student(i, name, "13/10/1997", List.of("Reactjs", "Vuejs"));
-            System.out.println(student.name());
-            System.out.println(student.toString());
-        }
+        ComplexNumber one = new ComplexNumber(1.0, 1.0);
+        ComplexNumber number = new ComplexNumber(2.5, -1.5);
+        one.add(1,1);
+        System.out.println("one.real= " + one.getReal());
+        System.out.println("one.imaginary= " + one.getImaginary());
+        one.subtract(number);
+        System.out.println("one.real= " + one.getReal());
+        System.out.println("one.imaginary= " + one.getImaginary());
+        number.subtract(one);
+        System.out.println("number.real= " + number.getReal());
+        System.out.println("number.imaginary= " + number.getImaginary());
     }
 }
