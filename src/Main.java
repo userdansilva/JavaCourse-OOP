@@ -1,41 +1,30 @@
 public class Main {
     public static void main(String[] args) {
-        SalariedEmployee daniel = new SalariedEmployee("Daniel", "13/10/1997",
-                "01/01/2019", 65_000);
-        System.out.println(daniel);
-        System.out.println(daniel.collectPay());
+        System.out.printf("""
+                    List of items
+                        • Item %d
+                        • item %d
+                        """, 1, 2);
 
-        daniel.retire();
+        System.out.println("-------");
 
-        System.out.println(daniel.collectPay());
-    }
-}
+        String name = "Daniel";
+        int age = 25;
 
-class Student {
-    private String name;
-    private int age;
+        System.out.printf("My name is %s and I am %.2f years old %n", name, (float) age);
 
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+        System.out.println("-------");
 
-    @Override
-    public String toString() {
-        return name + " is " + age + " years old";
-    }
-}
+        for (int i = 1; i <= 100_000; i *= 10) {
+            System.out.printf("My number is %6d%n", i);
+        }
 
-class PrimarySchoolStudent extends Student {
-    private String parentName;
+        System.out.println("-------");
 
-    public PrimarySchoolStudent(String name, int age, String parentName) {
-        super(name, age);
-        this.parentName = parentName;
-    }
+        String formattedString = String.format("My name is %s", name);
+        System.out.println(formattedString);
 
-    @Override
-    public String toString() {
-        return super.toString() + ", and his parent is " + parentName;
+        formattedString = "My age is %d".formatted(age);
+        System.out.println(formattedString);
     }
 }
